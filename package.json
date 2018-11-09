@@ -1,0 +1,41 @@
+{
+  "name": "mistermesh",
+  "version": "0.0.1",
+  "description": "Mister Mesh, he meshes the mess, so you can stress less",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "pretest": "yarn run lint",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LukeSilva/mistermesh.git"
+  },
+  "author": "Luke Silva & Josh Van Dijk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LukeSilva/mistermesh/issues"
+  },
+  "homepage": "https://github.com/LukeSilva/mistermesh#readme",
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "ts-jest"
+    },
+    "testMatch": ["**/*.test.ts"]
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.9",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.4",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.6"
+  }
+}
