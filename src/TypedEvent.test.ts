@@ -20,6 +20,7 @@ describe("TypedEvent", () => {
     expect(hook).toBeCalledWith(5);
 
     events.removeListener(hook);
+    hook.mockClear();
 
     events.emit(6);
     expect(hook).not.toBeCalled();
@@ -34,6 +35,7 @@ describe("TypedEvent", () => {
     expect(hook).toBeCalledWith(5);
 
     unregister();
+    hook.mockClear();
 
     events.emit(6);
     expect(hook).not.toBeCalled();
@@ -48,7 +50,7 @@ describe("TypedEvent", () => {
 
     events.emit(1);
     expect(hook1).toBeCalledWith(1);
-    expect(hook2).toBeCalledWith(2);
+    expect(hook2).toBeCalledWith(1);
   });
 
   test("multiple listeners can be added and removed", () => {
@@ -58,6 +60,7 @@ describe("TypedEvent", () => {
     const unregister1 = events.addListener(hook1);
     events.emit(1);
     expect(hook1).toBeCalledWith(1);
+    expect(hook2).not.toBeCalled();
     hook1.mockClear();
 
     events.addListener(hook2);
