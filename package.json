@@ -27,6 +27,14 @@
     },
     "testMatch": [
       "**/*.test.ts"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "setupFiles": [
+      "<rootDir>/node_modules/ts-polyfill/dist/ts-polyfill.js"
     ]
   },
   "devDependencies": {
@@ -37,5 +45,7 @@
     "typescript": "^3.1.6"
   },
   "dependencies": {
+    "@types/core-js": "^2.5.0",
+    "ts-polyfill": "^3.0.1"
   }
 }
